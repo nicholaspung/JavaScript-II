@@ -101,10 +101,51 @@ ticketPriceTotal = runners.map(element => element.donation).reduce((accumulator,
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
-// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
+// Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  
+// Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// We need the participants email-addresses for our mailing list in order to thank them for helping the community build better facilities. Get a list of emails.
+// Return an array named emailAddresses that contains email addresses and log their results.
+
+let emailAddresses = [];
+
+runners.forEach(function(element) {
+    emailAddresses.push(element.email);
+});
+
+console.log(emailAddresses);
 
 // Problem 2
+// Gigashots wants a list of their employees who participated in the fund raising 5k fun run to praise their accomplishments and to award them honors for helping out the community.
+// Get a list of Gigashots employees that participated in the run. Return an array named employeesGigashots array and log the result.
+
+let employeesGigashots = [];
+
+// employeesGigashots = runners.filter(function(element) {
+//     return element.company_name === "Gigashots";
+// });
+
+employeesGigashots = runners.filter(employee => employee.company_name === "Gigashots");
+
+console.log(employeesGigashots);
 
 // Problem 3
+// We need to find out how many medium sized shirts we need to buy. Get a total of the amount of medium sized shirts we need to buy for the runners before the 5k run fun begins.
+// Put it into a mediumShirts array and log the result.
+
+let mediumShirts = [];
+
+/* mediumShirts = runners
+    .map(function(element) {
+        return element.shirt_size;
+    })
+    .filter(function(element) {
+        return element === "M";
+    })
+    .length;
+*/
+
+mediumShirts = runners.map(element => element.shirt_size).filter(element => element === "M").length;
+
+console.log(mediumShirts);
