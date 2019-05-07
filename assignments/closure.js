@@ -1,6 +1,19 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function sampleClosure(material) {
+  let element = ['copper'];
+
+  function addElement(material) {
+    element.push(material);
+    console.log(element);
+  }
+
+  return addElement(material);
+}
+
+sampleClosure('nickel');
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
