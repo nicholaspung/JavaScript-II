@@ -83,8 +83,27 @@ contains('Notebook', items, function(item, list) {
 
 /* STRETCH PROBLEM */
 
+itemsDuplicate = items.concat(items);
+
+console.log('Duplicate Array: ', itemsDuplicate);
+
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(array);
 }
+
+removeDuplicates(itemsDuplicate, function(array) {
+  let emptyArray = [];
+
+  for (let i=0; i < array.length; i++) {
+    if (!emptyArray.includes(array[i])) {
+      emptyArray.push(array[i]);
+    }
+  }
+
+  array = emptyArray;
+
+  console.log('No Duplicates: ', array);
+});
